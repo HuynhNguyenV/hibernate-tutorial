@@ -6,28 +6,36 @@ import java.text.ParseException;
 
 public class TestCustomerDao {
 
-    public static void main(String[] args) throws ParseException {
-        CustomerDAO customerDAO = new CustomerDAO();
-
-//        Customer customer = new Customer(1,"hanh", "phan thiet");
-//        Customer customer2 = new Customer("ha", "gia lai");
-        Customer customer3 = new Customer(7,"binh", "lao cai");
-//
-//        customerDAO.insert(customer);
-//        customerDAO.insert(customer2);
-//        customerDAO.insert(customer3);
-
-        System.out.println("----------Show All---------");
-        customerDAO.showAll();
-        System.out.println("-------update---------");
-//        customerDAO.delete(4);
-//        customerDAO.updateName(1,"huy");
-//        customerDAO.updateAll(customer);
-//        customerDAO.showAll();
-        System.out.println("---------search---------");
-        customerDAO.searchByName("binh");
-
-        System.out.println("ok");
-
+    public static void main(String[] args) {
+        showAll();
+//        findById();
     }
+
+    public static void showAll(){
+        CustomerDAO customerDAO = new CustomerDAO();
+        customerDAO.showAll();
+    }
+
+
+    public static void insert(){
+        CustomerDAO customerDAO = new CustomerDAO();
+        customerDAO.insert(new Customer("kai","viet nam"));
+    }
+
+    public static void findById(){
+        CustomerDAO customerDAO = new CustomerDAO();
+        customerDAO.findById(2);
+    }
+
+    public static void searchByName(){
+        CustomerDAO customerDAO = new CustomerDAO();
+        customerDAO.searchByName("nga");
+    }
+
+    public static void delete(){
+        CustomerDAO customerDAO = new CustomerDAO();
+        customerDAO.delete(4);
+    }
+
+
 }
