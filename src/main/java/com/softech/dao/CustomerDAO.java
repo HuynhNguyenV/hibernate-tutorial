@@ -27,6 +27,13 @@ public class CustomerDAO {
         }
     }
 
+    public Customer findById(int id){
+        Session session = sessionFactory.openSession();
+        Customer customer = session.load(Customer.class, id);
+        System.out.println(customer);
+        return customer;
+    }
+
     void showAll(){
         Session session = sessionFactory.openSession();
         try {
