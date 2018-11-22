@@ -20,12 +20,12 @@ public class TestCustomerDao {
         System.out.println("----------Show All---------");
         customerDAO.showAll();
         System.out.println("-------update---------");
-        customerDAO.delete(customer3);
+//        customerDAO.delete(4);
 //        customerDAO.updateName(1,"huy");
 //        customerDAO.updateAll(customer);
-        customerDAO.showAll();
-//        System.out.println("---------search---------");
-//        customerDAO.searchByName("binh");
+//        customerDAO.showAll();
+        System.out.println("---------search---------");
+        customerDAO.searchByName("binh");
 
         System.out.println("ok");
 

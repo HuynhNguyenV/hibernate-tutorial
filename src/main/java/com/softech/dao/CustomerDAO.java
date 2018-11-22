@@ -40,7 +40,7 @@ public class CustomerDAO {
             session.beginTransaction();
             List<Customer> list = session.createQuery("from Customer").list();
             for (Customer customer: list){
-                System.out.println(customer.getId() + " " + customer.getName() + " " + customer.getAddress());
+                System.out.println(customer);
             }
         } catch (RuntimeException e) {
             session.getTransaction().rollback();
@@ -84,12 +84,14 @@ public class CustomerDAO {
         }
     }
 
-    void delete(Customer customer){
+    void delete(int id){
         Session session = sessionFactory.openSession();
         try {
             session.beginTransaction();
+            Customer customer = session.load(Customer.class, id);
             session.delete(customer);
             session.getTransaction().commit();
+            System.out.println("delete success");
         } catch (RuntimeException e) {
             session.getTransaction().rollback();
             e.printStackTrace();
@@ -105,7 +107,7 @@ public class CustomerDAO {
             session.beginTransaction();
             List<Customer> list = session.createQuery("from Customer where name like :name").setParameter("name", "%" + name + "%").list();
             for(Customer customer : list){
-                System.out.println(customer.getId() + " " + customer.getName() + " " + customer.getAddress());
+                System.out.println(customer);
             }
         } catch (RuntimeException e) {
             session.getTransaction().rollback();
