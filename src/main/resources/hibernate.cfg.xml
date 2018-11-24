@@ -8,7 +8,7 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
          <property name="connection.username">root</property>
-         <property name="connection.password">123456789</property>
+         <property name="connection.password">123456</property>
         <mapping class="com.softech.entities.Customer"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
